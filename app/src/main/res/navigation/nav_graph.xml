@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.kursach.screens.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_fragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patients_fragment"
+        android:name="com.example.kursach.screens.parientslist.PatientsFragment"
+        android:label="fragment_patients"
+        tools:layout="@layout/fragment_patients" >
+        <action
+            android:id="@+id/action_patients_fragment_to_patientDetailFragment"
+            app:destination="@id/patientDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.kursach.screens.notedetail.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail" >
+        <action
+            android:id="@+id/action_noteDetailFragment_to_patients_fragment"
+            app:destination="@id/patients_fragment" />
+        <action
+            android:id="@+id/action_noteDetailFragment_to_procedureListFragment"
+            app:destination="@id/procedureListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/procedureListFragment"
+        android:name="com.example.kursach.screens.procedurelist.ProcedureListFragment"
+        android:label="fragment_procedure_list"
+        tools:layout="@layout/fragment_procedure_list" >
+        <action
+            android:id="@+id/action_procedureListFragment_to_procedureDetailFragment"
+            app:destination="@id/procedureDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/procedureDetailFragment"
+        android:name="com.example.kursach.screens.proceduredetail.ProcedureDetailFragment"
+        android:label="ProcedureDetailFragment" />
+    <fragment
+        android:id="@+id/patientDetailFragment"
+        android:name="com.example.kursach.screens.patientdetail.PatientDetailFragment"
+        android:label="PatientDetailFragment" />
+</navigation>
